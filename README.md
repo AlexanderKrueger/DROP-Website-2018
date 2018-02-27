@@ -6,13 +6,11 @@
 [Trello SCRUM Board](https://trello.com/b/x5qJ79fU/drop-scrum-board)
 
 ### X10 Host
-#### Credentials
+**--- Credentials ---**
 
-Email: akrueger12@students.blackhawk.edu
+Located on the private Trello team page so random people
+can't edit our work
 
-Password: som3thingsom3thing
+**--- Links ---**
 
-Username: dropx103
-
-#### Links
 Home Page (http://drop.x10host.com)
