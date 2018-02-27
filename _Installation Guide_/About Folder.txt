@@ -1,0 +1,2 @@
+Folder contains instructions and database materials to move development
+and testing of the website to a diffrent Windows OS computer (perferably for versions "Windows XP" and beyound)

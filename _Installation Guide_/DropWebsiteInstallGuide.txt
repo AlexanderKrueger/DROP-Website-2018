@@ -1,0 +1,121 @@
+﻿//=== Set Up Demo Website On PC ===
+
+//=============================================
+
+[(1) Ensure XAMPP Is Downloaded]
+
+a) If XAMPP is already downloaded with at least MySQL, PHP (version 6 or higher), and PHPMyAdmin, then go to step 2
+
+b) Go to https://www.apachefriends.org/index.html
+
+c) Press the download button for the windows installer
+
+d) Start installer and begin installation process
+
+e) You'll be given options on what to include, make sure MariaDB (includes MySQL interpreters), PHP, and PHPMyAdmin are included
+
+f) Complete installation
+
+
+
+[(2) Configure XAMPP]
+  
+* If you're having localhost or port related problem:
+         
+	a) Start XAMPP
+         
+	b) Follow instructions at:
+
+		stackoverflow.com/questions/11294812/how-to-change-xampp-apache-server-port
+         
+	c) If you haven't yet, restart the MySQL and Apache servers from the XAMPP control panel
+  
+* For the website database functions to work, you'll need the MySQL server password for the root user set to "root":
+         
+	a) Open XAMPP
+
+		Start > All Programs > XAMPP > XAMPP Control Panel
+         
+	b) Open XAMPP control panel and click button "shell". Command Prompt should pop up
+         
+	c) In the new command prompt, enter:
+
+		mysqladmin.exe -u root password root
+         
+	d) Restart the  MySQL and/or Apache servers that were up during sub-step "c" (if any)
+     
+		NOTE:
+          
+		Root user is included by default and should not be
+ deleted (assuming this is possible)
+
+
+[(3) Set Up Website On Local Computer]
+
+a) Go to https://github.com/WebAnalystFieldStudyInternship/InternshipProject/archive/master.zip
+	
+NOTE:
+
+	Entering web address will automatically download the
+	"master.zip" file
+
+b) Extract contents of zip file at it's current location
+
+c) Of extracted, find and move folder "InternshipProject-master" to:
+
+	C:\xampp\htdocs
+
+d) In web browser enter:
+
+	(If port remains unchanged <see: step 2, 1st bullet>)
+
+		http://localhost/InternshipProject-master/index.php
+
+	(If port was changed to port 8080 <see: step 2, 1st bullet>)
+
+		http://localhost:8080/InternshipProject-master/index.php
+
+
+
+[(4) Run Website]
+
+a) Open XAMPP
+
+b) Start Apache and MySQL servers
+
+c) In web browser enter:
+
+	(If port remains unchanged <see: step 2, 1st bullet>)
+
+		http://localhost/phpmyadmin
+
+	(If port was changed to port 8080 <see: step 2, 1st bullet>)
+
+		http://localhost:8080/phpmyadmin
+
+d) Login to phpmyadmin using the MySQL root user's username and password (see section: Demo Credentials)
+e) Click the import tab
+
+f) Click the "Browse" button
+g) find and select file:
+
+	C:\xampp\htdocs\InternshipProject-master\stage3\resource_db.sql
+
+h) Click the "Go" button
+
+
+
+//=== Demo Credentials ===
+
+//=============================================
+
+[Website Demo: Admin Password]
+
+	username: NONE
+ password: "password"
+
+
+[Website Demo: MySQL Server Root User Password]
+
+	username: "root"
+ password: "root"
