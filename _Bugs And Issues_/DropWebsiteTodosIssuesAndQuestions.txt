@@ -1,0 +1,16 @@
+[Website: Todos, Issues And Unanswered Questions]
+- security: add
+- ux design: revisit
+- documentation: add more
+- fix interactive map bug: county  "la cross" on map doesn't show the county's name in bigger text below the map when the county is selected
+- no way to add and remove administrators to update map resources (help resources, phone number, ect)
+- create unit tests
+- determine what copyright to place on each pages footer
+- no one included documentation on how to set the development environment
+- is blind and deaf friendly? must not violate The Americans with Disabilities Act
+- restructure the GitHub file structure: will also involve file editing might be needed becuase of absolute paths, but main goal is to remove the "stage" directories
+- add shim code
+- is website stupid proof?
+- does every page load under 8 seconds?
+- decide hash algorithm for admin passwords
+- no page exists to add admins

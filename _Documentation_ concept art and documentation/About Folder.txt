@@ -1,0 +1,4 @@
+Contains concept art and documentation
+about how the pages look, the first draft of the database, and first documentation conceptionalizing how the website works.
+
+There is a HTML mock-up of the home page in the "Mock-Up Index V1" folder

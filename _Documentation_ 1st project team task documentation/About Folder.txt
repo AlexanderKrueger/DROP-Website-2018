@@ -1,0 +1,3 @@
+Folder contains transcripts from the team about who does what.
+Files are kept should it help project team 2 (and possible beyound) to better understand
+what was used in the project.
