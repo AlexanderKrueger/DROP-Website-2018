@@ -38,7 +38,7 @@ f) Complete installation
          
 	b) Open XAMPP control panel and click button "shell". Command Prompt should pop up
          
-	c) In the new command prompt, enter:
+	c) <Set MySql Server admin credentials> In the new command prompt, enter:
 
 		mysqladmin.exe -u root password root
          
@@ -47,7 +47,7 @@ f) Complete installation
 		NOTE:
           
 		Root user is included by default and should not be
- deleted (assuming this is possible)
+ deleted (assuming deletion is possible)
 
 
 [(3) Set Up Website On Local Computer]
