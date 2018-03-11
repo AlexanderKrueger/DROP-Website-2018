@@ -1,5 +1,0 @@
-Not implemented into the demo version. However, can still be runed
-by going directly to the file via URL. Links break if file's folder is placed deeper
-or shallower than 2 directories deeper than the root folder.
-
-The folder can be named whatever you want and no links will be broken.
