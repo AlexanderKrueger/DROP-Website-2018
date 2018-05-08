@@ -1,19 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 <?php require 'php/includes/head.php' ?>
+<?php require 'php/model/db.php' ?>
 
 <!-- Create the PDO object -->
 <?php
-    $dsn = 'mysql:host=localhost; dbname=dropx103_resource_db';
+    $db = getAccess();
+    $dsn = 'mysql:host=localhost;dbname=dropx103_resource_db';
     $userName = 'dropx103';
     $passWord = 'som3thingsom3thing';
 	
-    try {
-        $db = new PDO($dsn, $userName, $passWord);
+    /*try {
+        global $db = new PDO($dsn, $userName, $passWord);
     } catch (PDOException $e) {
         $error_message = $e->getMessage();
         echo "<p>Connection failed: $error_message</p>";
-    }
+    }*/
 ?>
 <?php            
     $resourceTypesQuery = "SELECT ResourceTypeName, ResourceTypeID FROM ResourceTypes";

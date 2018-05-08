@@ -14,6 +14,13 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
+-- Create Users
+--
+CREATE USER 'dropx103'@'localhost' IDENTIFIED BY 'som3thingsom3thing'; GRANT ALL PRIVILEGES ON *.* TO 'dropx103'@'localhost';
+CREATE USER 'dropx103'@'127.0.0.1' IDENTIFIED BY 'som3thingsom3thing'; GRANT ALL PRIVILEGES ON *.* TO 'dropx103'@'127.0.0.1';
+CREATE USER 'dropx103'@'::1' IDENTIFIED BY 'som3thingsom3thing'; GRANT ALL PRIVILEGES ON *.* TO 'dropx103'@'::1';
+
+--
 -- Database: `Resource_DB`
 --
 
