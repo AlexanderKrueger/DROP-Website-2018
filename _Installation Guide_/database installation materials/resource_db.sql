@@ -7,9 +7,9 @@
 -- Server version: 5.6.34
 -- PHP Version: 7.1.0
 
-DROP DATABASE IF Exists resource_db;
-CREATE DATABASE resource_db;
-USE resource_db;
+DROP DATABASE IF Exists dropx103_resource_db;
+CREATE DATABASE dropx103_resource_db;
+USE dropx103_resource_db;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -690,7 +690,7 @@ INSERT INTO `ResourceTypeAssignment` (`ResourceTypeAssignmentID`, `ResourceTypeI
 
 CREATE TABLE `ResourceTypes` (
   `ResourceTypeID` int(11) NOT NULL,
-  `ResourceTypeName` varchar(150) DEFAULT NULL
+  `ResourceTypeName` varchar(150) DEFAULT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -699,7 +699,7 @@ CREATE TABLE `ResourceTypes` (
 
 INSERT INTO `ResourceTypes` (`ResourceTypeID`, `ResourceTypeName`) VALUES
 (1, 'Emergency'),
-(2, 'Non Emergency'),
+(2, 'Law Enforcement Resources' /* <-- (3/13/2018) Changed from: 'Non Emergency' */),
 (3, 'Reporting Abuse'),
 (4, 'Clothes Free'),
 (5, 'Consumer Protection'),
