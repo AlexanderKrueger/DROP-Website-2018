@@ -5,20 +5,24 @@
  * Date: 4/3/17
  * Time: 11:31 PM
  */
+    /*Summary:
+     * Name of database accessable by any script once this script is loaded.
+     */
+    const DB_NAME = 'dropx103_resource_db';
+    const DB_USERNAME = 'dropx103';
+    const DB_PASSWORD = 'som3thingsom3thing';
 
     /*Summary:
-     *Returns a PDO object that has access to the festival database.
+     *Returns a PDO object that has access to the database.
      */
     function getAccess() {
         // by Correy Winke
         // 10/27/16
         // opens up a database
-        $dsn = 'mysql:host=localhost;dbname=resource_db';
-        $username = 'root';
-        $password = 'root';
-        // check to se it works
+        $dsn = 'mysql:host=localhost;dbname='.DB_NAME;
+        // check to see if it works
         try {
-            $db = new PDO($dsn, $username, $password);
+            $db = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $db;
         } catch (PDOException $err) {
