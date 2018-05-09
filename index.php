@@ -66,20 +66,19 @@
                     </thead>
                     <tbody>
                         <?php
-                            $resourceQuery = 'SELECT ResourceName, PhoneNUMBER, ResourceTypeName
-                                      FROM Resources INNER JOIN 
-                                           (
-                                               ResourceTypeAssignment INNER JOIN ResourceTypes ON ResourceTypeAssignment.ResourceTypeID = ResourceTypes.ResourceTypeID 
-                                           ) 
-                                           ON Resources.ResourceID = ResourceTypeAssignment.ResourceID 
-                                           WHERE ResourceTypeAssignment.ResourceTypeID = :resourceTypeID ORDER BY Resources.ResourceName';
+                            $resourceQuery = 'SELECT ResourceName, PhoneNUMBER, Email, StreetAddress, City, StateID, Zip
+                            FROM Resources 
+                            INNER JOIN ResourceTypeAssignment ON Resources.ResourceID = ResourceTypeAssignment.ResourceID
+                            INNER JOIN ResourceTypes ON ResourceTypeAssignment.ResourceTypeID = ResourceTypes.ResourceTypeID 
+                            WHERE ResourceTypeAssignment.ResourceTypeID = :resourceTypeID 
+                            ORDER BY Resources.ResourceName';
                             $resourceStatement = $db->prepare($resourceQuery);
                             $resourceStatement->execute(array(':resourceTypeID' => $resourceType['ResourceTypeID']));
                             $resources = $resourceStatement->fetchAll();
                             $resourceStatement->closeCursor();
                         ?>
                         <?php foreach /* thing in */ ($resources as $resource): ?>             
-                            <tr style="cursor:pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;" onclick=<?php echo "\"window.location.assign('http://drop.x10host.com/resource.php?ResourceName=".rawurlencode($resource['ResourceName'])."')\""?>>
+                            <tr style="cursor:pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;" onclick=<?php echo "\"window.location.assign(window.location.href+'resource.php?ResourceName=".rawurlencode($resource['ResourceName'])."&PhoneNUMBER=".rawurlencode($resource["PhoneNUMBER"])."&Email=".rawurlencode($resource["Email"])."&StreetAddress=".rawurlencode($resource["StreetAddress"])."&City=".rawurlencode($resource["City"])."&StateID=".rawurlencode($resource["StateID"])."&Zip=".rawurlencode($resource["Zip"])."')\""?>>
                                 <td><?php echo $resource['ResourceName']; ?></td>
                                 <td><?php echo $resource['PhoneNUMBER']; ?></td>
                             </tr>
@@ -105,6 +104,8 @@
     <?php echo file_get_contents("dist/my-com.js"); ?>
 </script>
 <script>
+    function storeResource
+
     function filterTables(){
         var valueOfSelected = document.getElementById("resource-type-selector").value;
         var tableContainer = document.getElementById("table-container");

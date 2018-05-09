@@ -39,67 +39,44 @@ $resourceStatement->closeCursor();
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <style>.h-underline{text-decoration: underline solid black;}</style>
-
         <style>
-            ::-webkit-scrollbar { background-color: grey;}
-            ::-webkit-scrollbar-button { background-color:#337ab7; }
-            ::-webkit-scrollbar-track { background-color:#337ab7 }
-            ::-webkit-scrollbar-track-piece { background-color:#a1bdde; border-radius: 5px; }
-            ::-webkit-scrollbar-thumb { background-color:#337ab7; border-radius:5px;  border-color: #2e6da4; border-style:solid; border-width:1px; }
-            ::-webkit-scrollbar-corner { background-color:pink }
-            ::-webkit-resizer { background-color:black;color:black; }
+            .btn-bottom-margin { margin-bottom: 1em }
         </style>
     </head>
     <body>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="h-underline"><?php echo htmlspecialchars(rawurldecode($_GET['ResourceName'])) ?></h2>
+                    <div class="jumbotron" style="margin-top:1em">
+                    <h1><?php echo htmlspecialchars(rawurldecode($_GET['ResourceName'])) ?></h1>
                     <p id="resource-description">
                     Bacon ipsum dolor amet pork chop ribeye jerky sirloin rump                           chuck. Sirloin jerky pork belly fatback brisket rump kevin                           shankle prosciutto. Pork chop capicola filet mignon alcatra                         brisket spare ribs. Kevin shank meatloaf pork, ham hock alcatra                     ground round bacon boudin beef ribs filet mignon.
                     </p>
+                    </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Phone</h3>
-                    <p><?php /*  var_dump($resources);  */ ?></p>
-                    <p><?php /*  $resources[1]  */ ?></p>
-                    <a href=<?php echo '"tel:'.$_GET['PhoneNUMBER'].'"'?>><?php echo $_GET['PhoneNUMBER'] ?></a>
+                <div class="col-sm-6 btn-bottom-margin" tabindex="0" role="link" label>
+                    <a href="#" class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-globe"></span> <!-- php echoed => -->www.resource_website.com</a>
                 </div>
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Email</h3>
-                    <a href="mailto:fake@fake.fake">email@emailHost.com</a>
+                <div class="col-sm-6 btn-bottom-margin" tabindex="1" role="button">
+                    <a href=<?php echo '"https://www.google.com/maps/place/'.str_replace(' ', '+', $_GET['StreetAddress'].' '.$_GET['StateID'].', '.$_GET['City'].' '.$_GET['Zip']).'"' ?> class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-map-marker"></span>
+                        <?php echo $_GET['StreetAddress'].' '.$_GET['StateID'].', '.$_GET['City'].' '.$_GET['Zip'] ?>
+                    </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Address</h3>
-                    <address>
-                    1111 Some Street<br>
-                    WI, SomeCity<br>
-                    11111
-                    </address>
+                <div class="col-sm-6 btn-bottom-margin" tabindex="2" role="button">
+                    <a href=<?php echo '"mailto:'.$_GET['Email'].'"'?> class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-envelope"></span><?php echo $_GET['Email']?></a>
                 </div>
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Website</h3>
-                    <a href="#">www.resourc_website.com</a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6" tabindex="0" role="link" label>
-                    <a class="btn btn-primary btn-block" href="#">Web</a>
-                </div>
-                <div class="col-xs-6" tabindex="1" role="button">
-                    <div class="btn btn-primary btn-block">Location</div>
+                <div class="col-sm-6 btn-bottom-margin" tabindex="2" role="button">
+                    <a href=<?php echo '"tel:'.htmlspecialchars(rawurldecode($_GET['PhoneNUMBER'])).'"'?> class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-earphone"></span> <?php echo htmlspecialchars(rawurldecode($_GET['PhoneNUMBER'])) ?></a>
                 </div>
             </div>
         </div><!-- container end -->
 
-                <script>
+        <script>
         <?php echo file_get_contents(__DIR__.'\\bootstrap.native-master\\dist\\bootstrap-native.min.js') ?>
         </script>
     </body>
