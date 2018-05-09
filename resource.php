@@ -63,38 +63,23 @@ $resourceStatement->closeCursor();
             </div>
 
             <div class="row">
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Phone</h3>
-                    <p><?php /*  var_dump($resources);  */ ?></p>
-                    <p><?php /*  $resources[1]  */ ?></p>
-                    <a href=<?php echo '"tel:'.$_GET['PhoneNUMBER'].'"'?>><?php echo $_GET['PhoneNUMBER'] ?></a>
+                <div class="col-sm-6" style="margin-top:1em" tabindex="0" role="link" label>
+                    <a href="#" class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-globe"></span> <!-- php echoed => -->www.resource_website.com</a>
                 </div>
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Email</h3>
-                    <a href="mailto:fake@fake.fake">email@emailHost.com</a>
+                <div class="col-sm-6" style="margin-top:1em" tabindex="1" role="button">
+                    <div class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-map-marker"></span>
+                        1111 Some Street
+                        WI, SomeCity
+                        11111
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Address</h3>
-                    <address>
-                    1111 Some Street<br>
-                    WI, SomeCity<br>
-                    11111
-                    </address>
+                <div class="col-sm-6" style="margin-top:1em" tabindex="2" role="button">
+                    <a href="mailto:fake@fake.fake" class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-envelope"></span></a>
                 </div>
-                <div class="col-xs-6">
-                    <h3 class="h-underline">Website</h3>
-                    <a href="#">www.resourc_website.com</a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6" tabindex="0" role="link" label>
-                    <a class="btn btn-primary btn-block" href="#">Web</a>
-                </div>
-                <div class="col-xs-6" tabindex="1" role="button">
-                    <div class="btn btn-primary btn-block">Location</div>
+                <div class="col-sm-6" style="margin-top:1em" tabindex="2" role="button">
+                    <a href=<?php echo '"tel:'.htmlspecialchars(rawurldecode($_GET['PhoneNUMBER'])).'"'?> class="btn btn-primary btn-block" style="text-align:left"><span class="glyphicon glyphicon-earphone"></span> <?php echo htmlspecialchars(rawurldecode($_GET['PhoneNUMBER'])) ?></a>
                 </div>
             </div>
         </div><!-- container end -->

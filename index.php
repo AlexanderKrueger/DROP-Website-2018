@@ -79,7 +79,7 @@
                             $resourceStatement->closeCursor();
                         ?>
                         <?php foreach /* thing in */ ($resources as $resource): ?>             
-                            <tr style="cursor:pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;" onclick=<?php echo "\"window.location.assign('http://drop.x10host.com/resource.php?ResourceName=".rawurlencode($resource['ResourceName'])."')\""?>>
+                            <tr style="cursor:pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;" onclick=<?php echo "\"window.location.assign(window.location.href+'resource.php?ResourceName=".rawurlencode($resource['ResourceName'])."&PhoneNUMBER=".rawurlencode($resource["PhoneNUMBER"])."')\""?>>
                                 <td><?php echo $resource['ResourceName']; ?></td>
                                 <td><?php echo $resource['PhoneNUMBER']; ?></td>
                             </tr>
