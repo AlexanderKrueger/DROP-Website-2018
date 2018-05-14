@@ -17,13 +17,12 @@
 
 // CREATE PDO OBJ
 //------------------------------------------------------------------------------------
-$dsn = 'mysql:host=localhost;dbname=resource_db;';
-$username = 'root';
-$password = 'root';
+include('../model/db.php');
 
 $pdoObj;
 try{
-$pdoObj = new PDO($dsn, $username, $password);
+$dsn = 'mysql:host=localhost;dbname='.DB_NAME;
+$pdoObj = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
 } catch (PDOException $e) {
 	echo 'Message: ' .$e->getMessage();
 /* undefined action at this time */

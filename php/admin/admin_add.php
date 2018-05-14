@@ -1,6 +1,8 @@
-<?php
-    require'../includes/admin-head.php';
-    require '../model/db.php'
+<?php require'../includes/admin-head.php';
+	
+	//require'../includes/admin-head.php' ON LINE 1 INCLUDES require 'admin_php_querys.php' WHICH CONTAINS include('../model/db.php')
+	//TO PREVENT AN ERROR THE LINE BELOW HAS BEEN COMMENTED OUT
+    //require '../model/db.php'
 ?>
     <input type="hidden" id="curPage" value="adminAdd">
     <div class="row">
@@ -66,9 +68,8 @@
                             }
                             ?>" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <?php
-                                $resTypes = getAll('Counties');
+<!--                        <div class="form-group">
+                           < ?php $resTypes = getAll('Counties'); //SPACE ADDED WITHIN THE PHP OPENING TAG TO COMMENT OUT SAID TAG
 
                                 foreach ($resTypes as $curType) {
                                     if (isset($_POST['curID']) == true) {
@@ -88,10 +89,9 @@
                                     }
                                 }
                             ?>
-                        </div>
+                        </div> COMMENTED OUT AS THE CURRENT VERSION IS FOR ROCK COUNTY ONLY -->
                         <div class="form-group">
-                            <?php
-                            $resTypes = getAll('ResourceTypes');
+                            <?php $resTypes = getAll('ResourceTypes');
 
                             foreach ($resTypes as $curType) {
                                 if (isset($_POST['curID']) == true) {

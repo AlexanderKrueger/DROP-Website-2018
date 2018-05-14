@@ -42,19 +42,19 @@ function helper($newRes) {
     $aryKeys = array_keys($aryMyValues);
 
     for ($lcv =0;$lcv<sizeof($aryMyValues);$lcv++) {
-        // makes sure there a value and is't not hte action value
+        // makes sure there a value and isn't the action value
         if((strlen($aryPostValues[$lcv]) != 0)) {
             handleSQL("UPDATE Resources SET {$aryKeys[$lcv]} = :curPlace WHERE ResourceID = :ID",[":curPlace", ":ID"],[$aryPostValues[$lcv], $newRes],2);
         }
     }
 
-    if(isset($_POST['ResourceTypeName']) == true) {
+    if(isset($_POST['ResourceTypeName']) == true && $_POST['action'] != 'edit') {
         foreach ($_POST['ResourceTypeName'] as $curPlace) {
             handleSQL('INSERT INTO ResourceTypeAssignment (ResourceTypeID, ResourceID) VALUES ((SELECT ResourceTypeID FROM ResourceTypes WHERE ResourceTypeName = :curValue), :resID)',[":curValue",":resID"],[$curPlace,$newRes],2);
         }
     }
 
-    handleSQL("UPDATE Resources SET CountyAssignmentID = (SELECT CountyAssignmentID FROM CountyAssignment WHERE CountyID = :curPlace) WHERE ResourceID = :ID",[":curPlace", ":ID"],[$_POST['Counties'][0], $newRes],2);
+//    handleSQL("UPDATE Resources SET CountyAssignmentID = (SELECT CountyAssignmentID FROM CountyAssignment WHERE CountyID = :curPlace) WHERE ResourceID = :ID",[":curPlace", ":ID"],[$_POST['Counties'][0], $newRes],2);
 
 }
 

@@ -1,6 +1,9 @@
 <?php
-include("../../stage3/Admin Pages/admin_php_querys.php");
-require("../../php/model/db.php");
+include("../Admin Pages/admin_php_querys.php");
+
+//"../Admin Pages/admin_php_querys.php" IT INCLUDES "../../php/model/db.php" TO PREVENT
+//AN ERROR THE LINE BELOW HAS BEEN COMMENTED OUT
+//require("../../php/model/db.php");
 
 //returns buttons for each resource category in the database
 function catButtons() {
