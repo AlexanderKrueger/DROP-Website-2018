@@ -4,7 +4,10 @@
         <div class="col-lg-3 col-xs-3" id="ResourceList">
             <form action="admin.php" method="post">
                 <ul class="list-group"> <?php
-                    require'../model/db.php';
+                    
+					//require'../includes/admin-head.php' ON LINE 1 INCLUDES require 'admin_php_querys.php' WHICH CONTAINS include('../model/db.php')
+					//TO PREVENT AN ERROR THE LINE BELOW HAS BEEN COMMENTED OUT
+					//require'../model/db.php';
                     $resTypes = getAll('ResourceTypes');
 
                     foreach ($resTypes as $curType) {
